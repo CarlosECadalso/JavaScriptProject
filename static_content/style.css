@@ -1,0 +1,90 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color:rgb(236, 236, 236);
+}
+
+nav {
+	margin: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+	padding: 0;
+	margin: 0;
+    text-align: center;
+}
+
+#registrationInputs input {
+    padding: 5px;
+    margin: 5px;
+}
+
+#registrationInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#retreatButton {
+    margin-left: 30px;
+}
+
+#registrationInputs input:disabled {
+    padding: 5px;
+    margin: 5px;
+    text-decoration: solid;
+    display: inline-block;
+    border: none;
+    font-size: 40px;
+    margin-left: 100px;
+}
+
+#ui_login input {
+    padding: 5px;
+    margin: 5px;
+}
+
+#ui_login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#ui_leaderboard {
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    flex-grow: 1;
+}
+
+table.leaderboard {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+#difficulty_selection {
+    text-align: center;
+}
+
+.button {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px 32px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}

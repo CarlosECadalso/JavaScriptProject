@@ -1,0 +1,14 @@
+Advanced Features Selected and Implemented:
+From the original list:
+Multiple types of AI opponents, and multiple instances of each (Medium): Each of them fire from different ranges, and some at different speeds.
+
+Play area 'shrinks', so being outside the zone impacts health. Shrinking play area on display (Medium): Purple area kills you.
+
+Obstacles can be destroyed (Easy): It takes quite a few bullets, but obstacles can be destroyed if you shoot them enough.
+
+Original:
+Respawning Enemies: Enemies respawn until the retreat button is pressed. They will come in waves.
+
+Obstacle traps: Obstacles trap the player and enemies, forcing them to move in the direction directly opposite to the obstacle. Think of them as thorn/bramble bushes.
+
+Pausing: The game will pause whenever you are not in the game screen.

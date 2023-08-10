@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta HTTP-EQUIV="EXPIRES" CONTENT="-1">
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="jquery-3.5.1.min.js"></script>
+		<script language="javascript" src="model.js" > </script>
+		<script language="javascript" src="controller.js" > </script>
+		<style>
+			#ui_login { display:block; }
+			#ui_play { display:none; }
+			#ui_navbar {display:none; }
+
+			#usernameRegister #usernameDisplay 
+			#oldPassword #newPassword #confirmPassword 
+			#email #firstName #lastName #birthday
+			#pizza #soda_choices #registerSubmit
+			#openLogin #editProfile{ padding: 10px;}
+		</style>
+		<title>f0rt9it32d</title>
+	</head>
+	<body bgcolor="ffffff">
+
+		<!-- Navigation section -->
+		<nav id='ui_navbar'>
+			<ul>
+				<li><input type="submit" class='button' id="leaderboardNav" value="Home"></li>
+				<li><input type="submit" class='button' id="gameNav" value="Game"></li>
+				<li><input type="submit" class='button' id="profileNav" value="Profile"></li>
+				<li><input type="submit" class='button' id="logoutNav" value="Logout"></li>
+			</ul>
+		</nav>
+		
+		<h1>f0rt9it32d</h1>
+		
+		<!-- Log in section -->
+		<div id="ui_login">
+			<div>
+				<input type="text" id="username" placeholder="User Name" required />
+				<br>
+				
+				<input type="password" id="password" placeholder="Password" required/>
+				<br>
+
+				<input type="submit" id="loginSubmit" value="Login">
+
+				<br>
+
+				<input type="submit" id="openRegistration" value="Register">
+			</div>
+		</div>
+
+		<!-- Difficulty section -->
+		<div id="difficulty_selection">
+			<h1>Select a difficulty</h1>
+			<div>
+				<input class='button' type="submit" id="difficulty_easy" value="I'm too young to die!">
+				<input class='button' type="submit" id="difficulty_mid" value="Hurt me plenty!">
+				<input class='button' type="submit" id="difficulty_hard" value="Bring 'em on!">
+			</div>
+		</div>
+
+		<div id="ui_errors"></div>
+
+		<!-- Registration section -->
+		<div id="ui_registration">
+			<h1 id="registerText">Register</h1>
+			<h1 id="profileText">Profile</h1>
+			<div id="registrationInputs">
+				<input type="text" id="usernameRegister" placeholder="User Name" maxLength="19" required />
+				<br>
+
+				<input type="password" id="newPassword" placeholder="Password" maxLength="19" required/>
+				<br>
+
+				<input type="password" id="confirmPassword" placeholder="Confirm Password" maxLength="19" required/>
+				<br>
+
+				<input type="email" id="email" placeholder="E-mail" maxLength="320" required />
+				<br>
+
+				<input type="text" id="firstName" placeholder="First Name" maxLength="32" required/>
+				<br>
+
+				<input type="text" id="lastName" placeholder="Last Name" maxLength="32" required/>
+				<br>
+
+				"Date of Birth" <input type="date" id="birthday" required/>
+				<br>
+
+				"Do you like pineapple on pizza?" 
+				<br>
+
+				<ol>
+					<li><label><input type="radio" name="category" id="pizza" value="yes" CHECKED="checked"/> Yes </label></li>
+					<li><label><input type="radio" name="category" id="pizza" value="no" /> No  </label></li>
+			  	</ol>
+				<br>
+
+				"Which brand of soda do you prefer?"
+				<br>
+				<select id="soda" name="soda_choices" multiple="multiple" size="4" >
+					<option selected="selected" value='Water'>Water </option>
+					<option value='Pepsi Cola'>Pepsi Cola </option>
+					<option value='Coca Cola'>Coca Cola </option>
+					<option value='7UP'>7UP</option>
+					<option value='Sprite'>Sprite </option>
+					<option value='Fanta'>Fanta </option>
+					<option value="President's Choice">President's Choice </option>
+				</select>
+				<br>
+
+				<input type="submit" id="registerSubmit" value="Register">
+
+				<input type="submit" id="editProfile" value="Save Changes">
+				<br>
+				
+				<input type="submit" id="deleteProfile" value="Delete Profile">
+				<br>
+
+				<input type="submit" id="openLogin" value="Back to Login">
+
+				
+			</div>
+		</div>
+
+		<div id="ui_errors"></div>
+
+		
+		<!-- Game and game information section -->
+		<div id="ui_play">
+			<div id="ui_bars" style="border-spacing: 10px; ">
+				<table id=statBars style="display:flex; border: none; justify-content: center; border-collapse: collapse;">
+					<tr style="justify-items: center;">
+						
+						<th><h3>Health</h3></th>
+						<th ><progress id="health_bar" value="8" max="10" min="0" s></progress></th>
+
+						<th><h3 style="padding-left: 100px;">Ammo</h3></th>
+						<th><progress id="ammo_bar" value="30" max="50" min="0" ></progress></th>
+
+						<th><input class='button' type="submit" id="retreatButton" value="Retreat"></th>
+
+						<th><h3 style="padding-left: 100px;">Score:</h3></th>
+						<th><h3 id="score">0</h3></th>
+
+						<th><h3 style="padding-left: 100px;">Wave:</h3></th>
+						<th><h3 id="wave">1</h3></th>
+
+
+
+
+
+					</tr>
+				</table>
+			</div>
+			
+			<center>
+				<canvas id="stage" width="800" height="800" style="border:1px solid black;"> </canvas>
+			</center>
+		</div>
+
+		<!-- Leader board section -->
+		<div id='ui_leaderboard'>
+			<!-- <h1>Easy Leaderboards</h1> -->
+			<table class='leaderboard'>
+				<tr>
+					<th>User</th>
+					<th>Score</th>
+					<th>Difficulty</th>
+					<th>Date</th>
+				</tr>
+				<tr><td id='euser0'></td><td id='escore0'></td><td id='ediff0'></td><td id='edate0'></td></tr>
+				<tr><td id='euser1'></td><td id='escore1'></td><td id='ediff1'></td><td id='edate1'></td></tr>
+				<tr><td id='euser2'></td><td id='escore2'></td><td id='ediff2'></td><td id='edate2'></td></tr>
+				<tr><td id='euser3'></td><td id='escore3'></td><td id='ediff3'></td><td id='edate3'></td></tr>
+				<tr><td id='euser4'></td><td id='escore4'></td><td id='ediff4'></td><td id='edate4'></td></tr>
+				<tr><td id='euser5'></td><td id='escore5'></td><td id='ediff5'></td><td id='edate5'></td></tr>
+				<tr><td id='euser6'></td><td id='escore6'></td><td id='ediff6'></td><td id='edate6'></td></tr>
+				<tr><td id='euser7'></td><td id='escore7'></td><td id='ediff7'></td><td id='edate7'></td></tr>
+				<tr><td id='euser8'></td><td id='escore8'></td><td id='ediff8'></td><td id='edate8'></td></tr>
+				<tr><td id='euser9'></td><td id='escore9'></td><td id='ediff9'></td><td id='edate9'></td></tr>
+			</table>
+
+			<!-- <h1>Normal Leaderboards</h1> -->
+			<table class='leaderboard'>
+				<tr>
+					<th>User</th>
+					<th>Score</th>
+					<th>Difficulty</th>
+					<th>Date</th>
+				</tr>
+				<tr><td id='nuser0'></td><td id='nscore0'></td><td id='ndiff0'></td><td id='ndate0'></td></tr>
+				<tr><td id='nuser1'></td><td id='nscore1'></td><td id='ndiff1'></td><td id='ndate1'></td></tr>
+				<tr><td id='nuser2'></td><td id='nscore2'></td><td id='ndiff2'></td><td id='ndate2'></td></tr>
+				<tr><td id='nuser3'></td><td id='nscore3'></td><td id='ndiff3'></td><td id='ndate3'></td></tr>
+				<tr><td id='nuser4'></td><td id='nscore4'></td><td id='ndiff4'></td><td id='ndate4'></td></tr>
+				<tr><td id='nuser5'></td><td id='nscore5'></td><td id='ndiff5'></td><td id='ndate5'></td></tr>
+				<tr><td id='nuser6'></td><td id='nscore6'></td><td id='ndiff6'></td><td id='ndate6'></td></tr>
+				<tr><td id='nuser7'></td><td id='nscore7'></td><td id='ndiff7'></td><td id='ndate7'></td></tr>
+				<tr><td id='nuser8'></td><td id='nscore8'></td><td id='ndiff8'></td><td id='ndate8'></td></tr>
+				<tr><td id='nuser9'></td><td id='nscore9'></td><td id='ndiff9'></td><td id='ndate9'></td></tr>
+			</table>
+
+			<!-- <h1>Hard Leaderboards</h1> -->
+			<table class='leaderboard'>
+				<tr>
+					<th>User</th>
+					<th>Score</th>
+					<th>Difficulty</th>
+					<th>Date</th>
+				</tr>
+				<tr><td id='huser0'></td><td id='hscore0'></td><td id='hdiff0'></td><td id='hdate0'></td></tr>
+				<tr><td id='huser1'></td><td id='hscore1'></td><td id='hdiff1'></td><td id='hdate1'></td></tr>
+				<tr><td id='huser2'></td><td id='hscore2'></td><td id='hdiff2'></td><td id='hdate2'></td></tr>
+				<tr><td id='huser3'></td><td id='hscore3'></td><td id='hdiff3'></td><td id='hdate3'></td></tr>
+				<tr><td id='huser4'></td><td id='hscore4'></td><td id='hdiff4'></td><td id='hdate4'></td></tr>
+				<tr><td id='huser5'></td><td id='hscore5'></td><td id='hdiff5'></td><td id='hdate5'></td></tr>
+				<tr><td id='huser6'></td><td id='hscore6'></td><td id='hdiff6'></td><td id='hdate6'></td></tr>
+				<tr><td id='huser7'></td><td id='hscore7'></td><td id='hdiff7'></td><td id='hdate7'></td></tr>
+				<tr><td id='huser8'></td><td id='hscore8'></td><td id='hdiff8'></td><td id='hdate8'></td></tr>
+				<tr><td id='huser9'></td><td id='hscore9'></td><td id='hdiff9'></td><td id='hdate9'></td></tr>
+			</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "ftd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ftd.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NepsiGit/CSC309_A2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NepsiGit/CSC309_A2/issues"
+  },
+  "homepage": "https://github.com/NepsiGit/CSC309_A2#readme"
+}
